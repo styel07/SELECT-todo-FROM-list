@@ -16,5 +16,44 @@ CREATE DATABASE todo_app;
 -- 5) connect to the newly created database
 \c todo_app;
 
--- 6)
---CREATE TABLE tasks
+-- 6) query to create a table named task
+CREATE TABLE tasks (
+id serial,
+title varchar(255),
+description text,
+created_at timestamp,
+updated_at timestamp,
+completed boolean
+);
+-- 7) define column id as the tables primary key
+ALTER TABLE tasks add PRIMARY KEY (id);
+
+-- 8)
+-- remove the column named completed
+ALTER TABLE tasks DROP completed;
+
+-- add a column to tasks named completed_at:timestamp, that may be NULL, and has a default value of NULL.
+
+-- change the updated_at column to not allow NULL values, and have a default value of now()
+
+-- create a new task, by only setting values (not defining which columns) id = default value title = 'Study SQL' description = 'Complete this exercise' created_at = now() updated_at = now() completed_at = NULL
+
+-- create a new task title = 'Study PostgreSQL' description = 'Read all the documentation'
+
+-- select all the titles of tasks that are not yet completed
+
+-- update the task with a title of 'Study SQL' to be completed as of now
+
+-- select all titles and descriptions of tasks that are not yet completed
+
+-- select all fields of every task sorted by creation date in descending order
+-- create a new task title = 'mistake 1' description = 'a test entry'
+-- create a new task title = 'mistake 2' description = 'another test entry'
+-- create a new task title = 'third mistake' description = 'another test entry'
+-- select title fields of all tasks with a title that includes the word 'mistake'
+-- delete the task that has a title of mistake 1
+-- select title and description fields of all tasks with a title that includes the word 'mistake'
+-- delete all tasks that includes the word 'mistake' in the title
+-- select all fields of all tasks sorted by title in ascending order
+
+-- DROP TABLE tasks;
