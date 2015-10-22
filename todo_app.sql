@@ -26,20 +26,31 @@ updated_at timestamp,
 completed boolean
 );
 -- 7) define column id as the tables primary key
-ALTER TABLE tasks add PRIMARY KEY (id);
+ALTER TABLE tasks
+ADD PRIMARY KEY (id);
 
 -- 8)
 -- remove the column named completed
-ALTER TABLE tasks DROP completed;
+ALTER TABLE tasks
+DROP completed;
 
 -- add a column to tasks named completed_at:timestamp, that may be NULL, and has a default value of NULL.
-ALTER TABLE tasks ADD completed_at timestamp DEFAULT NULL;
+ALTER TABLE tasks
+ADD completed_at timestamp DEFAULT NULL;
 
--- change the updated_at column to not allow NULL values, and have a default value of now()
-ALTER TABLE tasks ALTER COLUMN updated_at SET NOT NULL;
-ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT NOW();
+-- change the updated_at column to not allow NULL values,
+ALTER TABLE tasks
+ALTER COLUMN updated_at
+SET NOT NULL;
+
+--and have a default value of now()
+ALTER TABLE tasks
+ALTER COLUMN updated_at
+SET DEFAULT NOW();
 
 -- create a new task, by only setting values (not defining which columns) id = default value title = 'Study SQL' description = 'Complete this exercise' created_at = now() updated_at = now() completed_at = NULL
+INSERT INTO tasks (title, description, created_at)
+VALUES ('Study SQL', 'Complete this exercise', NOW());
 
 -- create a new task title = 'Study PostgreSQL' description = 'Read all the documentation'
 
@@ -58,5 +69,3 @@ ALTER TABLE tasks ALTER COLUMN updated_at SET DEFAULT NOW();
 -- select title and description fields of all tasks with a title that includes the word 'mistake'
 -- delete all tasks that includes the word 'mistake' in the title
 -- select all fields of all tasks sorted by title in ascending order
-
--- DROP TABLE tasks;
