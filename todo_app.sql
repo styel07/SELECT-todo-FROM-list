@@ -1,3 +1,6 @@
+-- switch out of database, then you can drop the database
+\c StyeL
+
 -- 1) delete a user named michael if it exists
 DROP USER IF EXISTS "michael";
 
@@ -14,9 +17,4 @@ CREATE DATABASE todo_app;
 \c todo_app;
 
 -- 6)
-CREATE TABLE tasks
-
-
--- DROP DATABASE todo_app
--- DELETE FROM users USING producers
--- WHERE producer_id = producers.id AND producers.name = 'michael';
+--CREATE TABLE tasks
