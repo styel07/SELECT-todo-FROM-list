@@ -93,7 +93,11 @@ VALUES ('mistake 2', 'another test entry');
 -- create a new task title = 'third mistake' description = 'another test entry'
 INSERT INTO tasks (title, description)
 VALUES ('third mistake', 'another test entry');
+
 -- select title fields of all tasks with a title that includes the word 'mistake'
+SELECT title
+FROM tasks
+WHERE title LIKE '%mistake%';
 
 -- delete the task that has a title of mistake 1
 
