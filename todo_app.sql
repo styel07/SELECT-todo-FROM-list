@@ -100,7 +100,8 @@ FROM tasks
 WHERE title LIKE '%mistake%';
 
 -- delete the task that has a title of mistake 1
-
+DELETE FROM tasks
+WHERE title LIKE 'mistake 1';
 -- select title and description fields of all tasks with a title that includes the word 'mistake'
 
 -- delete all tasks that includes the word 'mistake' in the title
