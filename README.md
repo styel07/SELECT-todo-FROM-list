@@ -70,5 +70,3 @@ Write all of your SQL statements in todo_app.sql
 | created_at   | timestamp (no tz)       | false | now()             |
 | updated_at   | timestamp (no tz)       | false | now()             |
 | completed_at | timestamp (no tz)       | true  | NULL              |
-
-eleazar
